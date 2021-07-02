@@ -1,0 +1,33 @@
+<h1>Queen share</h1>
+<h3>新規投稿</h3>
+<%= form_for @recommendation do |f| %>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_field :body, :size => 140 %>
+  </div>
+  <%= f.submit "新規投稿" %>
+<% end %>
+<%= link_to "Tweet一覧に戻る", tweets_path %>
+
+
+<div class="field">
+<%= f.label :shop_name %>
+<%= f.select :shop_name, 
+[["マクドナルド", "マクドナルド"], 
+["モスバーガー", "モスバーガー"], 
+["バーガーキング", "バーガーキング"]], include_blank: "選択して下さい" %>
+</div>
+
+<div class="field">
+<%= f.label :price %>
+<%= f.number_field :price, :size => 10 %>
+</div>
+
+<div class="field">
+<%= f.label :adress %>
+<%= f.text_area :adress, :size => "30x2" %>
+</div>
+<%= f.submit "Burgerを投稿する" %>
+<% end %>
+
+<%= link_to "Burger一覧に戻る", burgers_path %>
